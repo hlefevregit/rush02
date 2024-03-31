@@ -6,7 +6,7 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:48:11 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/31 19:26:49 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:54:00 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@ void	print_first_n(char nb, char **dico)
 	int	j;
 
 	i = 0;
-	while (dico[i])
+	if (nb != '0')
 	{
-		if (dico[i][0] == nb)
+		while (dico[i])
 		{
-			print_all(dico, i, j);
-			break ;
+			if (dico[i][0] == nb)
+			{
+				print_all(dico, i, 2);
+				break ;
+			}
+			i++;
 		}
-		i++;
 	}
 }
 
@@ -41,7 +44,7 @@ int	print_dozen(char *nb, char **dico, int index)
 		{
 			if (dico[i][1] == nb[index + 1])
 			{
-				print_all(dico, i, j);
+				print_all(dico, i, 2);
 				return (0);
 			}
 		}
@@ -56,7 +59,7 @@ void	print_tens(char *nb, char **dico, int index)
 	int	j;
 
 	i = 0;
-	if (nb[index] == 1)
+	if (nb[index] == '1' && nb[index + 1])
 		i = print_dozen(nb, dico, index);
 	else
 	{
@@ -66,8 +69,8 @@ void	print_tens(char *nb, char **dico, int index)
 			{
 				if (nb[index] == dico[i][0])
 				{
-					if (dico[i][1] == '0' || dico[i][1] == nb[index + 1])
-						print_all(dico, i, j);
+					if (dico[i][1] == '0')
+						print_all(dico, i, 2);
 				}
 				i++;
 			}
@@ -86,14 +89,17 @@ void	ft_put_under(char *nb, char **dico, int power)
 	i = 0;
 	if (power > 2)
 	{
-		while (i != power - 2)
+		while (i < power - 2)
 		{
 			print_first_n(nb[i], dico);
 			ft_print_power(power - i, dico);
+			i++;
 			print_tens(nb, dico, i);
-			i += 3;
+			i++;
 		}
 	}
+	else if (nb[0] == '0')
+		ft_putstr("zero\n");
 	else
 		print_tens(nb, dico, 0);
 }

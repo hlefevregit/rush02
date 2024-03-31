@@ -6,7 +6,7 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:19:55 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/31 19:27:59 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:49:19 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_strerror(char *str);
 int		ft_atoi(const char *str);
 int		print_nb(char **dico, char *nb);
 int		ft_isprint(int c);
-int		powerlen(int power, char **dico);
+int		powerlen(int power, char *dico);
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);

@@ -6,7 +6,7 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 19:17:27 by hulefevr          #+#    #+#             */
-/*   Updated: 2024/03/31 19:28:18 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:52:14 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	print_all(char **dico, int i, int j)
 {
-	j = 2;
 	while (ft_isprint(dico[i][j]) == 0 || dico[i][j] == ':')
 		j++;
 	while (dico[i][j] != '\0')
@@ -24,21 +23,15 @@ void	print_all(char **dico, int i, int j)
 	}
 }
 
-int	powerlen(int power, char **dico)
+int	powerlen(int power, char *dico)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (dico[i])
-	{
-		j = 0;
-		while (dico[i][j] != ' ')
-			j++;
-		if (j == power + 1)
-			return (1);
+	while (dico[i] != ' ')
 		i++;
-	}
+	if (i == power + 1)
+		return (1);
 	return (0);
 }
 
@@ -50,10 +43,8 @@ void	ft_print_power(int power, char **dico)
 	i = 0;
 	while (dico[i])
 	{
-		if (powerlen(power, dico) == 1)
-		{
-			print_all(dico, i, j);
-		}
+		if (powerlen(power, dico[i]) == 1)
+			print_all(dico, i, power);
 		i++;
 	}
 }

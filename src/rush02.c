@@ -6,7 +6,7 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:22:44 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/31 19:27:38 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:38:21 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	treat_no_dico(char *nb)
 	char	**dico;
 
 	buf = malloc(sizeof(char) * BUFSIZ);
-	fd = open("../dic/numbers.dict", O_RDONLY);
+	fd = open("dic/numbers.dict", O_RDONLY);
 	if (fd == -1)
 		return (ft_strerror("Dict Error\n"));
 	size = read(fd, buf, BUFSIZ);
@@ -50,7 +50,7 @@ int	treat_dico(char *fd_path, char *nb)
 	i = 0;
 	while (dico[i])
 		i++;
-	dico[41] = '\0';
+	dico[41] = NULL;
 	close(fd);
 	return (print_nb(dico, nb));
 }
