@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush02.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:19:55 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/30 13:53:11 by hlefevre         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:27:59 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,17 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-# define BUFSIZ 10000
-
 int		ft_strerror(char *str);
 int		ft_atoi(const char *str);
 int		print_nb(char **dico, char *nb);
+int		ft_isprint(int c);
+int		powerlen(int power, char **dico);
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	free_tab(char **tab);
+void	print_all(char **dico, int i, int j);
+void	ft_print_power(int power, char **dico);
 
 char	**ft_split(const char *s, char c);
 

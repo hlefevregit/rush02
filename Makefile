@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+         #
+#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/22 21:05:28 by hlefevre          #+#    #+#              #
-#    Updated: 2024/03/30 13:51:04 by hlefevre         ###   ########.fr        #
+#    Updated: 2024/03/31 19:18:01 by hulefevr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,13 @@ FILES =	./src/ft_atoi.c \
 		./src/ft_itoa.c \
 		./src/ft_strerror.c \
 		./src/print_nb.c \
+		./src/ft_isprint.c \
+		./src/xavier_niel.c \
+		./src/print_all.c \
 
 OBJ = ${FILES:.c=.o}
 
-FLAGS = -Wextra -Wall -Werror -fsanitize=address
+FLAGS = -Wextra -Wall -Werror
 
 all:	${NAME}
 
